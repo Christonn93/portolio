@@ -44,7 +44,7 @@ Right click on the HTML page, choose live preview
 
 ## Contributing
 
-- The design of this page is created with some super help from one of my class mates, Ida [Linkedin]()
+- The design of this page is created with some super help from one of my class mates, Ida [Linkedin](https://www.linkedin.com/in/ida-marie-hansen-29aabb239/)
 
 ## Contact
 
