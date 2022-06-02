@@ -1,4 +1,4 @@
-# Project Exam 1
+# Portfolio
 
 ![image](/app/assets/img/index.png)
 
