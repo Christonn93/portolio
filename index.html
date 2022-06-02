@@ -13,30 +13,34 @@
  </head>
  <body>
   <div class="loader">
-   <i class="fa-solid fa-terminal loading blink"></i>
+   <span class="loading blink"><i class="fa-solid fa-terminal"></i></span>
    <h1 class="loading blink">Page is loading</h1>
    <p class="loading blink">.....</p>
   </div>
   <div class="layout">
    <div class="layout-container main">
+    
     <header class="header-layout">
+
      <nav class="main-navigation" role="navigation">
-      <a href="#" class="nav-tab" id="nav-index">Index.html</a>
-      <a href="#my-work" class="nav-tab" id="nav-work">Project-gallery.html</a>
-      <a href="#about" class="nav-tab" id="nav-about">about.html</a>
-      <a href="#contact" class="nav-tab" id="nav-contact">contact.html</a>
+      <a href="#" class="nav-tab active" id="index-nav">Index.html</a>
+      <a href="#my-work" class="nav-tab" id="my-work-nav">Project-gallery.html</a>
+      <a href="#about" class="nav-tab" id="about-nav">about.html</a>
+      <a href="#contact" class="nav-tab" id="contact-nav">contact.html</a>
      </nav>
+
     </header>
 
     <main class="container-layout">
-     <section id="my-work">
+
+     <section id="my-work" class="section">
       <div class="container">
        <h1>My work</h1>
        <div class="card-container"></div>
       </div>
      </section>
 
-     <section id="about">
+     <section id="about" class="section">
       <div class="container">
        <h2>About</h2>
        <div class="box about-box">
@@ -82,18 +86,18 @@
       </div>
      </section>
 
-     <section id="contact">
+     <section id="contact" class="section">
       <div class="container">
-       <img src="/app/assets/img/markus-spiske-1LLh8k2_YFk-unsplash.jpg" class="image" />
+       <img src="/app/assets/img/markus-spiske-1LLh8k2_YFk-unsplash.jpg" class="image" alt="image of some code example from google"/>
       </div>
 
       <div class="container">
        <h2>Contact info</h2>
        <div class="box">
-        <div class="form-frame">
+        <!-- <div class="form-frame">
          <h3>Contact form</h3>
 
-         <form action="./index.html" method="post">
+         <form action="https://formspree.io/mbjzbwaj" method="POST" id="contact_form">
           <div class="form-container flex-col">
            <label class="form-label" for="name">Name:</label>
            <input type="text" class="form-input" id="name" />
@@ -122,27 +126,36 @@
            <button type="submit" class="btn btn-form">Send your message</button>
           </div>
          </form>
-        </div>
+
+        <div class="modal-bg" tabindex="-1" role="dialog" id="myModal"></div>
+        </div> -->
+
         <div class="contact-info">
           <div>
-            <p>You can also contact me on Email or Phone</p>
+            <p>You can contact me on Email or Phone.</p>
+            <p>And you can also reach me on LinkedIn.</p>
           </div>
           <div>
             <ul>
-              <li>
-               <a href="Christopher.tonnesland@gmail.com" class="contact-link">Email</a>
+              <li class="list-item">
+               <a href="mailto:christopher.tonnesland@gmail.com" class="contact-link"><i class="fa-solid fa-envelope"></i>&ensp;Email</a>
               </li>
-              <li>
-               <a href="45481637" class="contact-link">Phone</a>
+              <li class="list-item">
+               <a href="tel:45481637" class="contact-link"><i class="fa-solid fa-phone"></i>&ensp;Phone</a>
               </li>
+              <li class="list-item">
+                <a href="https://www.linkedin.com/in/christopher-t%C3%B8nnesland/" target="_blank" class="contact-link"><i class="fa-brands fa-linkedin"></i>&ensp;LinkedIn</a>
+               </li>
              </ul>
           </div>
         </div>
        </div>
       </div>
      </section>
+
     </main>
    </div>
+
    <div class="sidebar-container sidebar">
     <div class="social-container">
      <div class="icon-box">
@@ -159,6 +172,7 @@
      </div>
     </div>
    </div>
+
   </div>
   <script src="/app/js/main.js" type="module"></script>
  </body>

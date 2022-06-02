@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-content: center;
     gap: 25px;
     height: 100vh;
 
@@ -13,11 +14,11 @@
 .loading {
     
     font-size: var(--fontSize-large);
-    color: #26a66a;
+    color: var(--main-clr);
     text-shadow: var(--text-shadow);
     font-family: 'Press Start 2P', cursive;
-
-    margin: 0;
+    text-align: center;
+    margin: 0 auto;
     padding: 0;
 }
 

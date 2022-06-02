@@ -55,6 +55,7 @@ Style list:
     --clr-3: #c3e88d;
 
     --bg-clr: #333333;
+    --bg-clr-sec: #252525;
 }
 
 *,
@@ -85,9 +86,12 @@ body {
     font-family: "Ubuntu Mono", monospace;
 }
 
+::-webkit-scrollbar {
+    width: thin;
+}
+
 body::-webkit-scrollbar {
     width: 0.5em;
-
 }
 
 body::-webkit-scrollbar-track {
@@ -117,6 +121,7 @@ ol,
 ul {
     display: flex;
     gap: 25px;
+    width: 100%;
 
     list-style: none;
     margin: 0;
@@ -124,10 +129,9 @@ ul {
 }
 
 li {
-    display: inline-flex;
-    gap: 15px;
+    display: flex;
+    gap: 25px;
     flex-wrap: wrap;
-    flex: 1 1 100%;
 
     font-size: var(--fontSize-small);
 }
@@ -195,12 +199,16 @@ a {
 
     width: 100%;
     background-color: #333333;
+    position: sticky;
+    top: 0;
+    z-index: 99;
 
     border-bottom: 0.5px solid black;
 }
 
 .main-navigation {
     display: flex;
+
 }
 
 .nav-tab {
@@ -214,7 +222,7 @@ a {
 }
 
 .nav-tab.active {
-    color: #26a66a;
+    color: var(--main-clr);
     background-color: rgb(37 37 37);
 }
 
@@ -236,6 +244,10 @@ a {
     width: 100%;
 }
 
+#contact > .container {
+    justify-content: center;
+}
+
 .container>h1,
 .container>h2 {
     text-align: center;
@@ -247,7 +259,7 @@ a {
     align-items: center;
     border-radius: 0.75rem;
     padding: 25px;
-    background-color: #181717;
+    background-color: var(--bg-clr-sec);
     box-shadow: var(--box-shadow-white);
 }
 
@@ -274,7 +286,8 @@ a {
 
 .card {
     position: relative;
-    height: 300px;
+    min-height: 300px;
+    max-height: 450px;
     min-width: 300px;
     max-width: 450px;
     flex: 1;
@@ -513,6 +526,10 @@ button {
 /* ======================
       5. UTILITIES
   ====================== */
+
+.list-item > a {
+    display: block;
+}
 
 .hidden {
     display: none;

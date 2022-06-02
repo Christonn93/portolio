@@ -13,6 +13,43 @@ const classes = {
  success: "input-success",
 };
 
+// Creating the content of the modal
+function createModalSuccess() {
+ const modal = document.getElementById("myModal");
+ modal.innerHTML = ` <div class="modal-container" role="document">
+<div class="modal-body">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h3>Success</h3>
+  </div>
+  <div>
+    <p>Thanks for contacting me. I will try to get back to you as soon as possible</p>
+  </div>
+  <div class="modal-footer">
+    <a href="index.html" class="btn">Close this message</a>
+  </div>
+</div>
+</div>`;
+}
+
+function createModalFail() {
+  const modal = document.getElementById("myModal");
+  modal.innerHTML = ` <div class="modal-container" role="document">
+ <div class="modal-body">
+   <div class="modal-header">
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+     <h3>Oh no!</h3>
+   </div>
+   <div>
+     <p>Something went wrong when sending the form. Try contacting me by email or phone listed below the form</p>
+   </div>
+   <div class="modal-footer">
+     <a href="index.html" class="btn">Close this message</a>
+   </div>
+ </div>
+ </div>`;
+ }
+
 // To check the email is valid
 const emailValidation = (email) => {
  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -109,20 +146,6 @@ const checkMessageValue = () => {
  return valid;
 };
 
-// const checkCheckboxValue = () => {
-//  const checkbox = document.getElementById("agree");
-
-//  // Setting valid to default as false
-//  let valid = false;
-//  if (checkbox.checked === true) {
-//   displaySuccess(message);
-//   valid = true;
-//  } else {
-//   displayError(checkbox, `<i class="fa-solid fa-exclamation"></i>`);
-//  }
-//  return valid;
-// };
-
 // Displaying success
 const displaySuccess = (input) => {
  const field = input.parentElement;
@@ -160,10 +183,19 @@ form.addEventListener("submit", function (e) {
  let isFormValid = isNameValid && isEmailValidation && isSubjectValid && isMessageValid;
 
  // submit to the server if the form is valid
- if (isFormValid) {
-  alert("Thanks for reaching out. We will contact you shortly");
-  window.location.href = "./index.html";
- }
+ ajax({
+  type: "POST",
+  url: "",
+  success: function() {
+    if (isFormValid) {
+      createModalSuccess();
+     }else{
+      createModalFail();
+    }
+    }
+});
+
+
 });
 
 // Setting up delay for error handling
