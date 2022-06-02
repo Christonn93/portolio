@@ -1,6 +1,6 @@
 # Project Exam 1
 
-![image](/app/assets/index-page.png)
+![image](/app/assets/img/index.png)
 
 A simple overview of the use/purpose of this project.
 
