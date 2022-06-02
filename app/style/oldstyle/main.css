@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+}
+
+.body-wrapper>.side-bar {
+    flex: 1 1 30%;
+}
+
+.body-wrapper>main {
+    flex: 1 1 70%;
+}
+
+header {
+    background: #5c5c5c;
+}
+
+nav {
+    display: flex;
+    gap: 2px;
+    padding-top: 15px;
+    height: fit-content;
+    background: #5c5c5c;
+}
+
+.link {
+    color: #ffffff;
+    padding: 10px;
+    background: #0a0a0a;
+    text-decoration: none;
+}
+
+.link.active {
+    color: #26a66a;
+    background: rgba(10, 10, 10, 0.53);
+}
+
+.side-bar {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    max-width: 70px;
+    min-height: 100vh;
+    padding: 5px;
+
+    background: #858585;
+}
+
+.side-bar>div {
+    margin-top: 100px;
+}
+
+.sosial {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    padding: 5px;
+}
+
+/* === Typ === */
+.title {
+    font-family: "Jockey One";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 50px;
+    color: #26a66a;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25),
+        0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.title-blue {
+    color: #78dce8;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7),
+        0px 2px 1px rgba(252, 106, 103, 0.52);
+}
+
+.slogan {
+    font-family: "Jockey One";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 50px;
+
+    color: #26a66a;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7),
+        0px 2px 1px rgba(252, 106, 103, 0.52);
+}
+
+.text-green {
+    font-family: "Jockey One";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 50px;
+
+    color: #26a66a;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7),
+        0px 2px 1px rgba(252, 106, 103, 0.52);
+}
+
+/* === images === */
+.profile-image {
+    box-shadow: 4px 4px 5px #fc9a67;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 15px;
+}
+
+.coding-img {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.image {
+    width: 660px;
+    height: 677px;
+    mix-blend-mode: lighten;
+}
+
+.tools-icon {
+    height: 64px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.7)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 2px 0px #fc6a67);
+}
+
+.icon {
+    width: 64px;
+    height: 64px;
+    filter: drop-shadow(2px 2px 0px #78DCE8);
+}
+
+.icon:hover {
+    filter: drop-shadow(2px 2px 0px #FC6A67);
+}
+
+/* === container === */
+.container {
+    display: flex;
+    padding: 15px;
+    min-height: 250px;
+    min-width: 250px;
+
+    background-color: #858585;
+}
+
+.container-large {
+    min-height: 500px;
+}
+
+.box-container {
+    padding: 25px;
+}
+
+/* === Flex === */
+.flex-container {}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.flex-col {
+    flex-direction: column;
+    min-height: 10px;
+    flex: 1;
+}

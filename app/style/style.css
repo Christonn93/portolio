@@ -1,0 +1,1044 @@
+/* ======================
+Project name: Portfolio
+Version: 0.0.1
+Author: Christopher Tønnesland
+
+Style list:
+
+1. Global style
+
+2. Typography
+
+3. Layout Classes 
+   
+4. 
+
+5. 
+
+6. Media Queries 
+   
+====================== */
+
+@import url("/app/style/utils/loader.css");
+
+
+/* ======================
+    1. GLOBAL STYLE
+====================== */
+
+/* ========== Root ========== */
+
+:root {
+    /* Root font sizing */
+    --fontSize-default: clamp(16px, 2vw, 24px);
+    --fontSize-x-small: clamp(14px, 1vw, 18px);
+    --fontSize-small: clamp(12px, 1.5vw, 18px);
+    --fontSize-medium: clamp(24px, 3vw, 36px);
+    --fontSize-large: clamp(38px, 4vw, 55px);
+    --fontSize-x-large: clamp(50px, 5vw, 68px);
+
+    /* Shadows */
+    --box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.8);
+    --box-shadow-2: 0px 4px 10px 2px rgba(0, 0, 0, 0.5),
+        0px 4px 10px 0px rgba(0, 0, 0, 0.8);
+    --box-shadow-light: 0px 0px 3px 2px var(--clr-1)inset;
+    --box-shadow-white: 0px 0px 3px 2px rgba(255, 255, 255, 0.5),
+    0px 0px 3px 2px rgba(255, 255, 255, 0.2);
+    --text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+        0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    /* Colors */
+    --main-clr: #26a66a;
+    --sec-clr: #fc9a67;
+    --clr-1: #f07178;
+    --clr-2: #c792ca;
+    --clr-3: #c3e88d;
+
+    --bg-clr: #333333;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* For debugging overflow */
+    /* border: 1px solid red; */
+    
+}
+
+/* ========== HTML ========== */
+
+/* 
+  
+  Adding style on elements without any specific class or id
+  
+  */
+
+/* ========== Body ========== */
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-size: var(--fontSize-default);
+    font-family: "Ubuntu Mono", monospace;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5em;
+
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--sec-clr);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--main-clr);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #78dce8;
+}
+
+/* ========== Section ========== */
+
+section {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+    padding: 1.75rem;
+}
+
+/* ========== List ========== */
+
+ol,
+ul {
+    display: flex;
+    gap: 25px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    flex: 1 1 100%;
+
+    font-size: var(--fontSize-small);
+}
+
+/* ======================
+      2. TYPOGRAPHY
+  ====================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--main-clr);
+    text-shadow: var(--text-shadow);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: var(--fontSize-x-large);
+}
+
+h2 {
+    font-size: var(--fontSize-large);
+}
+
+h3 {
+    font-size: var(--fontSize-medium);
+}
+
+a {
+    font-size: var(--fontSize-small);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* ======================
+      3. LAYOUT
+  ====================== */
+
+/* ========== Layout (Grid-based) ========== */
+
+.layout {
+    display: grid;
+    grid-template-columns: 5% 95%;
+
+    width: 100%;
+    height: 100vh;
+}
+
+.main {
+    order: 2;
+}
+
+.sidebar {
+    order: 1;
+}
+
+/* ========== Header & Navigation layout ========== */
+
+.header-layout {
+    display: flex;
+
+    width: 100%;
+    background-color: #333333;
+
+    border-bottom: 0.5px solid black;
+}
+
+.main-navigation {
+    display: flex;
+}
+
+.nav-tab {
+    color: #ffffff;
+    padding: 10px;
+    background-color: #636363;
+    text-decoration: none;
+    padding: 10px 20px;
+
+    border-right: 0.25px solid black;
+}
+
+.nav-tab.active {
+    color: #26a66a;
+    background-color: rgb(37 37 37);
+}
+
+/* ========== Content Layout ========== */
+
+.container-layout {
+    background-color: #333333;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 25px;
+    width: 100%;
+}
+
+.container>h1,
+.container>h2 {
+    text-align: center;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.75rem;
+    padding: 25px;
+    background-color: #181717;
+    box-shadow: var(--box-shadow-white);
+}
+
+.about-box {
+    align-items: center;
+}
+
+.about-box ul {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    gap: 5px;
+}
+
+/* ========== Card ========== */
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+}
+
+.card {
+    position: relative;
+    height: 300px;
+    min-width: 300px;
+    max-width: 450px;
+    flex: 1;
+    box-shadow: var(--box-shadow);
+    border-radius: 0.75rem;
+    cursor: pointer;
+
+    /* Bg image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.card-body {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+
+    position: absolute;
+    width: 100%;
+    padding: 15px;
+
+    background-color: #333333;
+    opacity: 0.9;
+    box-shadow: var(--box-shadow-2);
+    border-radius: 0.75rem;
+    cursor: default;
+}
+
+.card-controller {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.card-body > .card-controller {
+    margin-top: auto;
+}
+
+.card:hover>.card-body {
+    transform: all 2s ease-in-out;
+    height: 100%;
+    display: flex;
+}
+
+/* ========== Contact form ========== */
+
+.form-frame {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 30px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+    text-align: left;
+    padding: 15px;
+}
+
+.form-label {
+    color: var(--main-clr);
+}
+
+.form-input {
+    border: none;
+    background-color: var(--bg-clr);
+    color: var(--main-clr);
+    padding: 15px;
+}
+
+.form-input:focus {
+    box-shadow: var(--box-shadow-light);
+    outline: none;
+}
+
+/* Form validation */
+.input-success {
+    border: 1px solid var(--main-clr);
+    color: var(--main-clr);
+}
+
+.input-error {
+    border: 1px solid var(--clr-1);
+    color: var(--clr-1);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px auto;
+}
+
+.contact-info:last-child {
+    align-items: center;
+}
+
+/* ========== Link ========== */
+
+.contact-link {
+    color: var(--sec-clr);
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+    color: var(--main-clr);
+}
+
+/* ========== Button ========== */
+
+button {
+    border: 0;
+    background-color: transparent;
+    max-height: fit-content;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    padding: 10px 20px;
+    margin: 0;
+
+    border-radius: 0.5rem;
+    outline: 0.5px solid var(--sec-clr);
+    outline-offset: 1px;
+    cursor: pointer;
+
+    font-size: clamp(16px, 2vw, 18px);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15px;
+
+    background-color: transparent;
+    color: var(--sec-clr);
+
+}
+
+.btn:hover {
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5), 0 0px 10px rgba(0, 0, 0, 0.8);
+    outline: 0.5px solid var(--main-clr);
+    outline-offset: -1px;
+    color: var(--main-clr);
+}
+
+.btn:focus {
+    outline: 0.5px solid var(--sec-clr);
+    outline-offset: 1px;
+    color: var(--main-clr);
+}
+
+/* ========== Sidebar ========== */
+
+.sidebar-container {
+    background-color: #858585;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.social-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    position: fixed;
+    top: 55px;
+}
+
+/* ======================
+      5. MEDIA, IMAGES & ICONS
+  ====================== */
+
+/* ========== Media ========== */
+
+/* ========== Images ========== */
+
+.image {
+    max-width: 660px;
+    max-height: 677px;
+    mix-blend-mode: lighten;
+}
+
+.profile-image {
+    max-width: 200px;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+}
+
+/* ========== Icons ========== */
+
+.large-icon {
+    width: 165px;
+    height: 165px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.icon-box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: fit-content;
+}
+
+.tool-icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon,
+.tool-icon {
+    font-size: var(--fontSize-medium);
+    color: var(--sec-clr);
+    filter: drop-shadow(1px 2px 0px rgba(0, 0, 0, 0.8));
+}
+
+.tool-icon:hover,
+.social-icon:hover {
+    filter: drop-shadow(1px 1px 0px var(--clr-1));
+}
+
+.tool-icon-container .icon-box:hover>.tool-info,
+.social-container .icon-box:hover>.link-info {
+    visibility: visible;
+}
+
+/* ======================
+      5. UTILITIES
+  ====================== */
+
+.hidden {
+    display: none;
+}
+
+/* ========== Tooltip ========== */
+
+.link-info {
+    visibility: hidden;
+    position: absolute;
+    top: 10px;
+    left: 60px;
+
+    display: flex;
+    justify-content: center;
+    min-width: 150px;
+    width: fit-content;
+    padding: 10px;
+    font-size: var(--fontSize-small);
+    text-align: center;
+    border-radius: 0.75rem;
+
+    background-color: #181717;
+    color: var(--sec-clr);
+    box-shadow: var(--box-shadow-white);
+}
+
+.tool-info {
+    visibility: hidden;
+
+    position: absolute;
+    top: 65px;
+    min-width: 130px;
+    text-transform: uppercase;
+
+    display: flex;
+    justify-content: center;
+    min-width: 150px;
+    width: fit-content;
+    padding: 10px;
+    font-size: var(--fontSize-small);
+    border-radius: 0.75rem;
+
+    background-color: #181717;
+    color: var(--sec-clr);
+    box-shadow: var(--box-shadow-white);
+}
+
+/* ======================
+      6. MEDIA QUERIES
+  ====================== */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    /* ========== Body ========== */
+
+
+    /* ========== Section ========== */
+
+    section {
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+    }
+
+    /* ========== List ========== */
+
+
+    /* ======================
+      2. TYPOGRAPHY
+  ====================== */
+
+
+    /* ======================
+      3. LAYOUT
+  ====================== */
+
+    /* ========== Layout (Grid-based) ========== */
+
+    .layout {
+        grid-template-columns: auto;
+    }
+
+    .main {
+        order: 1;
+    }
+
+    .sidebar {
+        max-width: 100%;
+        order: 2;
+    }
+
+    /* ========== Header & Navigation layout ========== */
+
+    .header-layout {
+        flex-direction: column;
+    }
+
+    .main-navigation {
+        flex-direction: column;
+    }
+
+
+    /* ========== Content Layout ========== */
+
+    .container-layout {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    /* ========== Card ========== */
+
+    .card-container {
+        justify-content: center;
+    }
+
+    .card {
+        flex: 1;
+        max-width: 250px;
+    }
+
+    /* ========== Link ========== */
+
+
+
+    /* ========== Button ========== */
+
+
+    /* ========== Sidebar ========== */
+
+
+    .social-container {
+        position: unset;
+        flex-direction: row;
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    /* ======================
+      5. MEDIA, IMAGES & ICONS
+  ====================== */
+
+    /* ========== Media ========== */
+
+    /* ========== Images ========== */
+
+    .image {
+        margin: 0 auto;
+        max-width: 200px;
+    }
+
+    /* ========== Icons ========== */
+
+
+    /* ======================
+      5. UTILITIES
+  ====================== */
+
+
+    /* ========== Tooltip ========== */
+
+    .link-info,
+    .tool-info {
+        display: none;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    /* ========== Body ========== */
+
+
+    /* ========== Section ========== */
+
+    section {
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+    }
+
+    /* ========== List ========== */
+
+
+    /* ======================
+      2. TYPOGRAPHY
+  ====================== */
+
+
+    /* ======================
+      3. LAYOUT
+  ====================== */
+
+    /* ========== Layout (Grid-based) ========== */
+
+    .layout {
+        grid-template-columns: auto;
+    }
+
+    .main {
+        order: 1;
+    }
+
+    .sidebar {
+        max-width: 100%;
+        order: 2;
+    }
+
+    /* ========== Header & Navigation layout ========== */
+
+    .header-layout {
+        flex-direction: column;
+    }
+
+    .main-navigation {
+        flex-direction: column;
+    }
+
+
+    /* ========== Content Layout ========== */
+
+    .container-layout {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    /* ========== Card ========== */
+
+    .card-container {
+        justify-content: center;
+    }
+
+    .card {
+        flex: 1;
+        max-width: 250px;
+    }
+
+    /* ========== Link ========== */
+
+
+
+    /* ========== Button ========== */
+
+
+    /* ========== Sidebar ========== */
+
+
+    .social-container {
+        position: unset;
+        flex-direction: row;
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    /* ======================
+      5. MEDIA, IMAGES & ICONS
+  ====================== */
+
+    /* ========== Media ========== */
+
+    /* ========== Images ========== */
+
+    .image {
+        margin: 0 auto;
+        max-width: 200px;
+    }
+
+    /* ========== Icons ========== */
+
+
+    /* ======================
+      5. UTILITIES
+  ====================== */
+
+
+    /* ========== Tooltip ========== */
+
+    .link-info,
+    .tool-info {
+        display: none;
+    }
+
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    /* ========== Body ========== */
+
+
+    /* ========== Section ========== */
+
+    section {
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+    }
+
+    /* ========== List ========== */
+
+
+    /* ======================
+      2. TYPOGRAPHY
+  ====================== */
+
+
+    /* ======================
+      3. LAYOUT
+  ====================== */
+
+    /* ========== Layout (Grid-based) ========== */
+
+    .layout {
+        grid-template-columns: auto;
+    }
+
+    .main {
+        order: 1;
+    }
+
+    .sidebar {
+        max-width: 100%;
+        order: 2;
+    }
+
+    /* ========== Header & Navigation layout ========== */
+
+    .header-layout {
+        flex-direction: column;
+    }
+
+    .main-navigation {
+        flex-direction: column;
+    }
+
+
+    /* ========== Content Layout ========== */
+
+    .container-layout {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    /* ========== Card ========== */
+
+    .card-container {
+        justify-content: center;
+    }
+
+    .card {
+        flex: 1;
+        max-width: 250px;
+    }
+
+    /* ========== Link ========== */
+
+
+
+    /* ========== Button ========== */
+
+
+    /* ========== Sidebar ========== */
+
+
+    .social-container {
+        position: unset;
+        flex-direction: row;
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    /* ======================
+      5. MEDIA, IMAGES & ICONS
+  ====================== */
+
+    /* ========== Media ========== */
+
+    /* ========== Images ========== */
+
+    .image {
+        margin: 0 auto;
+        max-width: 200px;
+    }
+
+    /* ========== Icons ========== */
+
+
+    /* ======================
+      5. UTILITIES
+  ====================== */
+
+
+    /* ========== Tooltip ========== */
+
+    .link-info,
+    .tool-info {
+        display: none;
+    }
+
+}
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        /* ========== Body ========== */
+
+        /* ========== Section ========== */
+
+        /* ========== List ========== */
+
+
+        /* ======================
+      2. TYPOGRAPHY
+  ====================== */
+
+
+        /* ======================
+      3. LAYOUT
+  ====================== */
+
+        /* ========== Layout (Grid-based) ========== */
+
+        /* ========== Header & Navigation layout ========== */
+
+
+        /* ========== Content Layout ========== */
+
+
+        /* ========== Card ========== */
+
+
+        /* ========== Link ========== */
+
+
+
+        /* ========== Button ========== */
+
+
+        /* ========== Sidebar ========== */
+
+        /* ======================
+      5. MEDIA, IMAGES & ICONS
+  ====================== */
+
+        /* ========== Media ========== */
+
+        /* ========== Images ========== */
+
+
+        /* ========== Icons ========== */
+
+
+        /* ======================
+      5. UTILITIES
+  ====================== */
+
+
+        /* ========== Tooltip ========== */
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        /* ========== Body ========== */
+
+        /* ========== Section ========== */
+
+        /* ========== List ========== */
+
+
+        /* ======================
+      2. TYPOGRAPHY
+  ====================== */
+
+
+        /* ======================
+      3. LAYOUT
+  ====================== */
+
+        /* ========== Layout (Grid-based) ========== */
+
+        /* ========== Header & Navigation layout ========== */
+
+
+        /* ========== Content Layout ========== */
+
+
+        /* ========== Card ========== */
+
+
+        /* ========== Link ========== */
+
+
+
+        /* ========== Button ========== */
+
+
+        /* ========== Sidebar ========== */
+
+        /* ======================
+      5. MEDIA, IMAGES & ICONS
+  ====================== */
+
+        /* ========== Media ========== */
+
+        /* ========== Images ========== */
+
+
+        /* ========== Icons ========== */
+
+
+        /* ======================
+      5. UTILITIES
+  ====================== */
+
+
+        /* ========== Tooltip ========== */
+    }

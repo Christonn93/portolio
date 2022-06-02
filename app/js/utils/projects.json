@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Cross Course Project",
+        "page_url": "https://cross-course-christonn93.netlify.app/index.html",
+        "repo_url": "https://github.com/Noroff-FEU-Assignments/cross-course-project-Christonn93",
+        "content": "This have been worked on across the first year. It's the fist project I got tasked todo do. It have two versions, one with API and one with CMS",
+        "image": "./app/assets/img/projects/gameHub.png"
+    },
+    {
+        "title": "Project Exam",
+        "page_url": "https://blog-exam-christonn93.netlify.app/",
+        "repo_url": "https://github.com/Noroff-FEU-Assignments/project-exam-1-Christonn93",
+        "content": "This is my first exam as a student at Noroff. I was tasked to use WP as a headless CMS, and use Netlify as the front-end for the project.",
+        "image": "./app/assets/img/projects/projectExam.png"
+    },
+    {
+        "title": "Semester Project",
+        "page_url": "https://noroff-project-csm.netlify.app/",
+        "repo_url": "https://github.com/Christonn93/semester-project-1",
+        "content": "In the semester project, i was task to create a website for a Community science Museum to promote the opening and attract guests.",
+        "image": "./app/assets/img/projects/semesterProject.png"
+    }
+]

@@ -1,0 +1,52 @@
+.loader {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    height: 100vh;
+
+    background-color: #333333;
+}
+
+.loading {
+    
+    font-size: var(--fontSize-large);
+    color: #26a66a;
+    text-shadow: var(--text-shadow);
+    font-family: 'Press Start 2P', cursive;
+
+    margin: 0;
+    padding: 0;
+}
+
+.blink {
+    -webkit-animation: 2s linear infinite condemned_blink_effect; /* for Safari 4.0 - 8.0 */
+    animation: 2s linear infinite condemned_blink_effect;
+  }
+  
+  /* for Safari 4.0 - 8.0 */
+  @-webkit-keyframes condemned_blink_effect {
+    0% {
+      visibility: hidden;
+    }
+    50% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
+    }
+  }
+  
+  @keyframes condemned_blink_effect {
+    0% {
+      visibility: hidden;
+    }
+    50% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
+    }
+  }
