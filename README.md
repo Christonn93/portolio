@@ -26,6 +26,11 @@ At this point in my studies, my knowledge on using Js to display content has bee
 
 ### Installing
 
+1. Download .zip or open with github desktop
+2. if(download .zip === true){ 
+    then you will need to unzip the download to be able to open the page in the browser.
+};
+
 ### Running
 
 This is a static page. So to run this in the browser i would suggest to use visual studio code extension [Live Server Preview](https://marketplace.visualstudio.com/items?itemName=negokaz.live-server-preview)
