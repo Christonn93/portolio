@@ -286,8 +286,8 @@ a {
 
 .card {
     position: relative;
-    min-height: 300px;
-    max-height: 450px;
+    min-height: 350px;
+    height: 100%;
     min-width: 300px;
     max-width: 450px;
     flex: 1;
@@ -305,6 +305,7 @@ a {
     position: absolute;
     display: none;
     flex-direction: column;
+    flex: 1;
 
     position: absolute;
     width: 100%;
